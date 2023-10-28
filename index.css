@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --nba-bg:#1d428a;
+    --nba-pill:#c8102e;
+    --lakers-bg: #552583;
+    --lakers-pill: #ffd700;
+    --atlanta-bg: #e03a3e;
+    --atlanta-pill:#FFFFFF;
+    --bucks-bg: #00471b;
+    --bucks-pill: #EEE1C6;
+    --boston-bg: #007A33;
+    --boston-pill: #BA9653;
+    --golden-bg: #1D428A;
+    --golden-pill: #FFC72C;
+    --phila-bg: #006BB6;
+    --phila-pill: #ED174C;
+    --dallas-bg: #00538C;
+    --dallas-pill: #002B5E;
+    --phoenix-bg: #1D1160;
+    --phoenix-pill: #E56020;
+
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+}
+#cards{
+    width:100% ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+
+}
+/* #ffd700 */
+/* #777777 */
+/* #b28405 */
+/* 99999959 */
+#cards .card{
+    width: calc(25% - 23px);
+    /* background-image: linear-gradient(-45deg,#efb810,#dedede); */
+    /* padding: 16px; */
+    border-radius: 10px;
+    /* border: 4px solid #b28405; */
+    border: 4px solid #dedede;
+}
+#cards .card .card-image{
+    position: relative;
+}
+#cards .card .card-image .card-pill{
+    position: absolute;
+    top:16px;
+    left: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 6px;
+    border-radius: 4px;
+
+    /* background-color: var(--nba-pill); */
+    
+
+
+}
+#cards .card .card-image .card-pill[time = "lakers"]{
+    background-color: var(--lakers-pill);
+
+}
+#cards .card .card-image .card-pill[time = "boston"]{
+    background-color: var(--boston-pill);
+
+}
+#cards .card .card-image .card-pill[time = "bucks"]{
+    background-color: var(--bucks-pill);
+
+}
+#cards .card .card-image .card-pill[time = "atlanta"]{
+    background-color: var(--atlanta-pill);
+
+}
+#cards .card .card-image .card-pill[time = "golden"]{
+    background-color: var(--golden-pill);
+
+}
+#cards .card .card-image .card-pill[time = "phila"]{
+    background-color: var(--phila-pill);
+
+}
+#cards .card .card-image .card-pill[time = "phoenix"]{
+    background-color: var(--phoenix-pill);
+
+}
+#cards .card .card-image .card-pill[time = "dallas"]{
+    background-color: var(--dallas-pill);
+    color: white;
+
+}
+
+#cards .card .card-image img[time = "lakers"]{
+    background-color: var(--lakers-bg);
+}
+#cards .card .card-image img[time = "boston"]{
+    background-color: var(--boston-bg);
+
+}
+#cards .card .card-image img[time = "dallas"]{
+    background-color: var(--dallas-bg);
+
+}
+#cards .card .card-image img[time = "phoenix"]{
+    background-color: var(--phoenix-bg);
+
+}
+#cards .card .card-image img[time = "phila"]{
+    background-color: var(--phila-bg);
+
+}
+#cards .card .card-image img[time = "golden"]{
+    background-color: var(--golden-bg);
+
+}
+#cards .card .card-image img[time = "atlanta"]{
+    background-color: var(--atlanta-bg);
+
+}
+#cards .card .card-image img[time = "bucks"]{
+    background-color: var(--bucks-bg);
+
+}
+#cards .card .card-image img{
+    display: block;
+    width: 100%;
+    padding: 36px 16px 0 16px;
+    
+}
+
+#cards .card .card-content{
+    padding: 16px;
+}
+
+@media  screen and ( max-width: 769px ) {
+    body {
+        padding: 50px;
+    }
+    #cards .card{
+        width: calc(50% - 13px);
+    }
+}
+
+@media screen  and (max-width: 481px){
+    body{
+        padding: 16px;
+    }
+    #cards .card{
+        width: 100%;
+    }
+}
+@media print {
+    body{
+        position: relative;
+    }
+    body::after{
+        content: "SEM VALOR";
+        font-size: 180px;
+        font-weight: bold;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(-45deg);
+        opacity: .2;
+    }
+    #cards .card .card-image img{
+       filter: grayscale(1);
+    }
+    #cards .card .card-content a{
+        display: none;
+    }
+    
+}
